@@ -49,14 +49,20 @@ namespace ChallengesWithTestsMark8
         {
             if (nameOfPerson == "")
             {
-               return $"Hello!";
+               return "Hello!";
             }
             else
             {
-                return $"Hello, {nameOfPerson}! ";
+                return $"Hello, {nameOfPerson}!";
             }
            // return string.IsNullOrEmpty(nameOfPerson) ? "Hello" : $"Hello,{nameOfPerson}";
         }
+       /* [InlineData("John", "Hello, John!")]
+        [InlineData("Leigh", "Hello, Leigh!")]
+        [InlineData("John Thomas", "Hello, John Thomas!")]
+        [InlineData("Leigh Ann", "Hello, Leigh Ann!")]
+        [InlineData("", "Hello!")]
+       */
 
         public string GetHey() => "HEY!";
        
