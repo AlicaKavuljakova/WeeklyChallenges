@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
+using System.Threading;
 
 namespace ChallengesWithTestsMark8
 {
@@ -103,13 +105,16 @@ namespace ChallengesWithTestsMark8
         public long CountOfPositiveOddsBelowNumber(long number)
         {
             long count = 0;
-            if (number<=0)
+            if (number <= 0)
             {
-                count= 0;
+                count = 0;
             }
-            else {
-              count=  number / 2;
-            }return count;
+            else
+            {
+                count = number / 2;
+                
+            }
+            return count;
         }
     }
 }
