@@ -17,8 +17,8 @@ namespace ChallengesWithTestsMark8
         {
             List<int> numbers = new List<int>() { str1.Length, str2.Length, str3.Length, str4.Length };
             numbers.Sort();
-            return numbers[0];
-
+           // return numbers[0];
+return numbers.Min();
 
 
         }
@@ -27,6 +27,7 @@ namespace ChallengesWithTestsMark8
         {
             IEnumerable<int> numbers = new List<int>() { number1, number2, number3, number4 };
             return numbers.OrderBy(x => x).ToList()[0];
+            //or return numbers.Min();
 
 
         }
@@ -61,37 +62,30 @@ namespace ChallengesWithTestsMark8
 
         public double AverageEvens(int[] numbers)
         {
-            double num;
-            if (numbers == null)
-            { return 0; }
-            if (numbers.Length == 0 || numbers.Where(x => x % 2 == 0).Count() == 0)
-            { return 0; }
-            
-            else
-            {
-                num = numbers.Where(x => x % 2 == 0).ToList().Average();
-            }
-                return num;
-            
-       // throw new NotImplementedException ();
+          
+
+           return  (numbers == null || numbers.Length == 0 || numbers.Where(x => x % 2 == 0).Count() == 0) ? 0 : numbers.Where(x => x % 2 == 0).ToArray().Average();
         }
 
         public int Factorial(int number)
         {
            
             int facto=0;
-            if (number > 0)
-            {
-                facto = Enumerable.Range(1, number).Aggregate(1, (p, item) => p * item); ;
-            }
-            if (number == 0 || number==1)
-            {
-                facto = 1;
-            }
-            else
+            if (number < 0 )
             {
                 throw new ArgumentOutOfRangeException();
             }
+            if(number == 0 || number ==1 )
+            {
+                facto = 1;
+            }
+           else
+            {
+                facto = Enumerable.Range(1, number).Aggregate(1, (p, item) => p * item); ;
+            }
+           
+             
+           
            return facto;
 
         }

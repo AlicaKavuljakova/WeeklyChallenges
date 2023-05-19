@@ -16,37 +16,25 @@ namespace ChallengesWithTestsMark8
                  }
 
              }return false;*/
-          return  (vals != null && vals.Length!=0 && vals.Contains(false)) ?true:false;
+            return (vals != null && vals.Length>0 && vals.Contains(false))?true:false;
+          //return  (vals != null && vals.Length!=0 && vals.Contains(false)) ?true:false;
         }
 
         public bool IsSumOfOddsOdd(IEnumerable<int> numbers)
         {
-            var sum = 0;
-            if (numbers == null) { return false; }
-            foreach(var item in numbers)
-            {
-             if(item%2!=0)  
-                {
-                    sum += item;
-                }
-            }
-            return sum % 2 != 0;
-            
-           
-            //  return  (numbers!=null && numbers.Count()!=0 && numbers.Sum()%2!=0 ) ?true:false;
-           // return numbers!=null && numbers.Where(x => x % 2 != 0).Sum() % 2 != 0;
+            return (numbers != null && numbers.Where(x=>x%2!=0).Sum() % 2 != 0)? true:false;
         }
 
         public bool PasswordContainsUpperLowerAndNumber(string password)
-        { 
-            bool isUpper=password.Any(char.IsLower);
-            bool isLower=password.Any(char.IsNumber);
-            bool isNumber =password.Any(char.IsUpper);
-          
-            return (isUpper && isNumber && isLower)? true:false;
-          
-            //return password.Any(char.IsNumber) && password.Any(char.IsUpper) && password.Any(char.IsLower) ? true : false;
-        }
+        {
+           /* bool isUpper = password.Any(char.IsLower);
+            bool isLower = password.Any(char.IsNumber);
+            bool isNumber = password.Any(char.IsUpper);
+
+            return (isUpper && isNumber && isLower) ? true : false;*/
+
+           return password.Any(char.IsUpper)&& password.Any(char.IsLower) && password.Any(char.IsNumber);
+            }
 
         public char GetFirstLetterOfString(string val)
         {
@@ -70,22 +58,25 @@ namespace ChallengesWithTestsMark8
 
         public int[] GetOddsBelow100()
         {
-            List<int> odds = new List<int>();
-            for (int i = 1; i < 100; i++)
-            {
-                if (i % 2 != 0)
-                {
-                    odds.Add(i);
-                }
-            } return odds.ToArray();
+             List<int> odds = new List<int>();
+              for (int i = 1; i < 100; i++)
+              {
+                  if (i % 2 != 0)
+                  {
+                      odds.Add(i);
+                  }
+              } return odds.ToArray();
+
+        
         }
 
         public void ChangeAllElementsToUppercase(string[] words)
         {
-          for(int i=0;i<words.Length;i++)
+            for (int i=0;i<words.Length;i++)
             {
-                words[i] = words[i].ToUpper();
+                words[i]= words[i].ToUpper();   
             }
+            Console.WriteLine(words);
             
         }
     }
