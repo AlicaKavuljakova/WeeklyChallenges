@@ -6,6 +6,23 @@ namespace ChallengesWithTestsMark8.Tests
     public class ChallengesSet04Tests
     {
         [Theory]
+        [InlineData("racecar",true)]
+        [InlineData("",true)]
+        [InlineData("papap",true)]
+        [InlineData("nd",false)]
+        [InlineData("banana",false)]
+
+        public void isPanTest(string a, bool expected)
+        {
+            ChallengesSet04 chal=new ChallengesSet04();
+            bool act = chal.isPan(a);
+            Assert.Equal(expected, act);
+        }
+
+
+
+
+        [Theory]
         [InlineData(new int[] { 2, 6, 8, 3, 1, 3 }, 9)]
         [InlineData(new int[] { 4, 6, 10 }, 20)]
         [InlineData(new int[] { 3, 1, 3 }, -7)]

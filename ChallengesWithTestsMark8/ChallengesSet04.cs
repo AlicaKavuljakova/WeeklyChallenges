@@ -7,7 +7,16 @@ using System.Security.Cryptography.X509Certificates;
 namespace ChallengesWithTestsMark8
 {
     public class ChallengesSet04
+
     {
+        public bool isPan(string a)
+        {
+            var aa=a.ToCharArray();
+         var b=  aa.Reverse();
+          return aa.SequenceEqual(b);
+         
+
+        }
         public int AddEvenSubtractOdd(int[] numbers)
         {
             return numbers.Where(x => x % 2 == 0).Sum() - numbers.Where(x => x % 2 != 0).Sum();
